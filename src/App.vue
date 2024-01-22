@@ -1,7 +1,6 @@
 <script >
 import AppHeader from './components/AppHeader.vue';
 import AppMain from './components/AppMain.vue';
-import AppFooter from './components/AppFooter.vue';
 import axios from 'axios';
 import { store } from './store.js';
 
@@ -14,13 +13,14 @@ export default {
     components: {
         AppHeader,
         AppMain,
-        AppFooter
     },
 
     methods: {
 
     },
+    // Nell ciclo di vita 'created()' richiamo l'API
     created() {
+        // Uso Axios per richiamare l'API
         axios
         .get(this.store.baseUrl)
         .then((response) => {
@@ -38,8 +38,6 @@ export default {
     <AppHeader />
 
     <AppMain />
-
-    <AppFooter />
 
 </template>
 

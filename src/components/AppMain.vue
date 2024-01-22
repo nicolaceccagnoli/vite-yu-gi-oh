@@ -26,9 +26,13 @@
             <div id="card-info">
                 Found X Cards
             </div>
-            <div class="col-12 col-sm-6 col-md-3 mb-3 text-center"
-            v-for="elem in 20">
-            CARD
+            <div class="mb-3 text-center">
+
+            <SingleCard
+            v-for="(card, i) in store.cards"
+            :key="i"
+            :mySingleCard="card"/>
+
             </div>
         </div>
     </main>
@@ -57,11 +61,6 @@
                 height: 50px;
                 background-color: black;
                 color: white;
-            }
-            .my-card {
-                width: 200px;
-                height: 400px;
-                background-color: red;
             }
         }
     }
