@@ -34,7 +34,7 @@ export default {
             console.log(this.store.cards);
 
             setTimeout(() => {
-                this.store.loaded = true;
+                this.store.loaded = false;
             }, 3000)
         });
     }
@@ -46,9 +46,9 @@ export default {
 
     <AppHeader />
 
-    <Loader v-if="loaded" />
+    <Loader v-if="store.loaded" />
 
-    <AppMain v-if="!loaded" />
+    <AppMain v-if="!store.loaded" />
 
 </template>
 
