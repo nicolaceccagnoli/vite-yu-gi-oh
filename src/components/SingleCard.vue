@@ -6,7 +6,10 @@
             };
         },
         props: {
-            mySingleCard: Object
+            mySingleCard: {
+                type: Object,
+                default: '[TIPO DI MOSTRO]'
+            }
         }
 
     }
@@ -18,11 +21,18 @@
             <img
             :src="mySingleCard.card_images[0].image_url" 
             :alt="mySingleCard.name">
+
+            <div class="card-info p-5">
+                <div class="text-white">
+                    {{ mySingleCard.name }}
+                </div>
+                
+                <div class="mt-3">
+                    {{ mySingleCard.archetype }}
+                </div>
+            </div>
         </div>
 
-        <div>
-
-        </div>
     </div>
 </template>
 
@@ -33,6 +43,11 @@
 
         img {
             width: 100%;
+        }
+
+        .card-info {
+            height: 200px;
+            background-color: #D48F39;
         }
 
     }

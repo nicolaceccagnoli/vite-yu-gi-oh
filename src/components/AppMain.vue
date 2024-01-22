@@ -23,7 +23,7 @@
             </select>
         </div>
         <div class="card-container">
-            <div id="card-info">
+            <div id="number-card">
                 Found X Cards
             </div>
             <div class="row mt-3 text-center">
@@ -51,12 +51,10 @@
         }
 
         .card-container {
-            max-width: 1600px;
-            margin: 0 auto;
             background-color: white;
             padding: 20px;
 
-            #card-info {
+            #number-card {
                 width: 100%;
                 padding: 10px;
                 height: 50px;
