@@ -1,12 +1,15 @@
 <script >
+    import SingleCard from './SingleCard.vue';
+    import { store } from '../store.js';
+
     export default {
         data() {
             return {
-
+                store
             };
         },
-        methods: {
-
+        components: {
+            SingleCard
         }
 
     }
@@ -19,9 +22,13 @@
                 <option selected value="Alien">Alien</option>
             </select>
         </div>
-        <div class="card-container d-flex">
+        <div class="card-container">
             <div id="card-info">
                 Found X Cards
+            </div>
+            <div class="col-12 col-sm-6 col-md-3 mb-3 text-center"
+            v-for="elem in 20">
+            CARD
             </div>
         </div>
     </main>
@@ -50,6 +57,11 @@
                 height: 50px;
                 background-color: black;
                 color: white;
+            }
+            .my-card {
+                width: 200px;
+                height: 400px;
+                background-color: red;
             }
         }
     }
