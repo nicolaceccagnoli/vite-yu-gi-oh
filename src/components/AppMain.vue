@@ -26,12 +26,13 @@
             <div id="card-info">
                 Found X Cards
             </div>
-            <div class="mb-3 text-center">
+            <div class="row mt-3 text-center">
 
-            <SingleCard
-            v-for="(card, i) in store.cards"
-            :key="i"
-            :mySingleCard="card"/>
+                <SingleCard
+                class="mb-3"
+                v-for="(card, i) in store.cards"
+                :key="i"
+                :mySingleCard="card"/>
 
             </div>
         </div>

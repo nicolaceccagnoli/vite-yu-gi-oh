@@ -14,7 +14,7 @@
 
 <template>
     <div class="my-single-card">
-        <div class="mb-2">
+        <div class="mb-2 w-100">
             <img
             :src="mySingleCard.card_images[0].image_url" 
             :alt="mySingleCard.name">
@@ -27,7 +27,13 @@
 </template>
 
 <style lang="scss" scoped>
-    img {
+
+    .my-single-card {
         width: calc(100% / 5);
+
+        img {
+            width: 100%;
+        }
+
     }
 </style>
