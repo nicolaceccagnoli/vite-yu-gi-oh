@@ -1,25 +1,30 @@
 <script >
 import AppHeader from './components/AppHeader.vue';
 import AppMain from './components/AppMain.vue';
+import Loader from './components/Loader.vue';
 import axios from 'axios';
 import { store } from './store.js';
 
 export default {
     data() {
         return {
-            store
+            store,
         };
     },
     components: {
         AppHeader,
         AppMain,
+        Loader
     },
 
     methods: {
 
     },
-    // Nell ciclo di vita 'created()' richiamo l'API
     created() {
+        
+    },
+    // Nell ciclo di vita 'created()' richiamo l'API
+    mounted() {
         // Uso Axios per richiamare l'API
         axios
         .get(this.store.baseUrl)
@@ -27,6 +32,10 @@ export default {
             console.log(response);
             this.store.cards = response.data.data;
             console.log(this.store.cards);
+
+            setTimeout(() => {
+                this.store.loaded = true;
+            }, 3000)
         });
     }
 
@@ -37,7 +46,9 @@ export default {
 
     <AppHeader />
 
-    <AppMain />
+    <Loader v-if="loaded" />
+
+    <AppMain v-if="!loaded" />
 
 </template>
 

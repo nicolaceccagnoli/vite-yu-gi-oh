@@ -5,11 +5,11 @@
     export default {
         data() {
             return {
-                store
+                store,
             };
         },
         components: {
-            SingleCard
+            SingleCard,
         }
 
     }
@@ -17,12 +17,14 @@
 
 <template>
     <main>
+
         <div>
             <select class="mb-2" id="inputGroupSelect01">
                 <option selected value="Alien">Alien</option>
             </select>
         </div>
         <div class="card-container">
+
             <div id="number-card">
                 Found {{store.cards.length}} Cards
             </div>
