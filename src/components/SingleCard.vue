@@ -6,10 +6,13 @@
             };
         },
         props: {
-            mySingleCard: {
-                type: Object,
+            mySingleCard: Object,
+
+            archetype: {
+                type: String,
                 default: '[TIPO DI MOSTRO]'
             }
+            
         }
 
     }
@@ -28,7 +31,7 @@
                 </div>
                 
                 <div class="mt-3">
-                    {{ mySingleCard.archetype }}
+                    {{ archetype }}
                 </div>
             </div>
         </div>

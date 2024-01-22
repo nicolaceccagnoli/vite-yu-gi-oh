@@ -18,13 +18,13 @@
 <template>
     <main>
         <div>
-            <select id="inputGroupSelect01">
+            <select class="mb-2" id="inputGroupSelect01">
                 <option selected value="Alien">Alien</option>
             </select>
         </div>
         <div class="card-container">
             <div id="number-card">
-                Found X Cards
+                Found {{store.cards.length}} Cards
             </div>
             <div class="row mt-3 text-center">
 
@@ -32,7 +32,8 @@
                 class="mb-3"
                 v-for="(card, i) in store.cards"
                 :key="i"
-                :mySingleCard="card"/>
+                :mySingleCard="card"
+                :archetype="card.archetype"/>
 
             </div>
         </div>
