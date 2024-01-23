@@ -22,7 +22,12 @@ export default {
         getApiResults () {
             // Uso Axios per richiamare l'API
             axios
-            .get(this.store.baseUrl)
+            .get(this.store.baseUrl
+            ,{
+                params: {
+                    archetype: this.store.singleArchetype
+                }
+            })
             .then((response) => {
                 console.log(response);
                 this.store.cards = response.data.data;
@@ -45,8 +50,9 @@ export default {
             .get(this.store.secondaryUrl)
             .then((response) => {
                 console.log(response);
-                this.store.cardsArchetype = response.data;
-                console.log(this.store.cardsArchetype);
+                for (let i = 0; i < response.data.length; i++) {
+                    this.store.cardsArchetype.push(response.data[i].archetype_name)
+                }
             })
         }
     },
@@ -65,7 +71,7 @@ export default {
 
     <Loader v-if="store.loaded" />
 
-    <AppMain v-if="!store.loaded" />
+    <AppMain v-if="!store.loaded" @performSearch="getApiResults()"/>
 
 </template>
 

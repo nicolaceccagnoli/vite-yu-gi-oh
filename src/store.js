@@ -10,5 +10,7 @@ export const store = reactive({
     // API degli Archetype
     secondaryUrl: 'https://db.ygoprodeck.com/api/v7/archetypes.php',
     // Creo un secondo Array per gli Archetype
-    cardsArchetype: []
+    cardsArchetype: [],
+    // Creo una variabile con una stringa vuota che corrisponderà al singolo Archetype
+    singleArchetype: 'Alien'
 })

@@ -8,6 +8,11 @@
                 store,
             };
         },
+        methods: {
+            newArch(x) {
+                this.store.singleArchetype = x;
+            }
+        },
         components: {
             SingleCard,
         }
@@ -17,11 +22,13 @@
 
 <template>
     <main>
+        <!-- <div>
+            {{ store.singleArchetype }}
+        </div> -->
 
         <div>
-            <select class="mb-2" id="inputGroupSelect01">
-                <option selected value="">Select Archetype</option>
-                <option v-for="archetype in store.cardsArchetype" value="">{{ archetype.archetype_name }}</option>
+            <select @click="$emit('performSearch')" v-model="store.singleArchetype" class="mb-2">
+                <option @click="newArch(value)" v-for="(archetype, i) in store.cardsArchetype" :value="archetype" :key="i">{{ archetype }}</option>
             </select>
         </div>
         <div class="card-container">
