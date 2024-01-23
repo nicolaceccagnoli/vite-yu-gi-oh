@@ -2,6 +2,7 @@
 import AppHeader from './components/AppHeader.vue';
 import AppMain from './components/AppMain.vue';
 import Loader from './components/Loader.vue';
+
 import axios from 'axios';
 import { store } from './store.js';
 
@@ -14,7 +15,7 @@ export default {
     components: {
         AppHeader,
         AppMain,
-        Loader
+        Loader,
     },
 
     methods: {

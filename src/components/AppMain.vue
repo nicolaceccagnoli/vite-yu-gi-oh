@@ -1,4 +1,5 @@
 <script >
+    import numberCard from './numberCard.vue';
     import SingleCard from './SingleCard.vue';
     import { store } from '../store.js';
 
@@ -18,7 +19,8 @@
             // }
         },
         components: {
-            SingleCard,
+            numberCard,
+            SingleCard
         }
 
     }
@@ -33,14 +35,18 @@
         <div>
             <!-- All'evento @change richiamo l'Api principale che stampa le cards in pagina tramite $emit -->
             <select @change="$emit('performSearch')" v-model="store.singleArchetype" class="mb-2">
+                <option selected value="">Select Archetype</option>
                 <option v-for="(archetype, i) in store.cardsArchetype" :value="archetype" :key="i">{{ archetype }}</option>
             </select>
         </div>
         <div class="card-container">
 
-            <div id="number-card">
+            <!-- <div id="number-card">
                 Found {{store.cards.length}} Cards
-            </div>
+            </div> -->
+
+            <numberCard />
+            
             <div class="row mt-3 text-center">
 
                 <SingleCard
@@ -74,13 +80,13 @@
             background-color: white;
             padding: 20px;
 
-            #number-card {
-                width: 100%;
-                padding: 10px;
-                height: 50px;
-                background-color: black;
-                color: white;
-            }
+            // #number-card {
+            //     width: 100%;
+            //     padding: 10px;
+            //     height: 50px;
+            //     background-color: black;
+            //     color: white;
+            // }
         }
     }
 
