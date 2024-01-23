@@ -20,7 +20,8 @@
 
         <div>
             <select class="mb-2" id="inputGroupSelect01">
-                <option selected value="Alien">Alien</option>
+                <option selected value="">Select Archetype</option>
+                <option v-for="archetype in store.cardsArchetype" value="">{{ archetype.archetype_name }}</option>
             </select>
         </div>
         <div class="card-container">
@@ -39,6 +40,7 @@
 
             </div>
         </div>
+
     </main>
 </template>
 
@@ -51,7 +53,8 @@
         background-color: $main-bg-color;
 
         div>select {
-            width: 100px;
+            width: 200px;
+            height: 40px;
             
         }
 
