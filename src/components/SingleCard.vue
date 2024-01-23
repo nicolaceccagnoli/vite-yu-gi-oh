@@ -41,8 +41,10 @@
 
 <style lang="scss" scoped>
 
+@use '../assets/scss/partials/mixins' as *;
+
     .my-single-card {
-        width: calc(100% / 5);
+        @include single-card;
 
         img {
             width: 100%;
@@ -50,7 +52,6 @@
 
         .card-info {
             height: 200px;
-            background-color: #D48F39;
         }
 
     }

@@ -1,0 +1,7 @@
+@use './variables.scss' as *;
+
+@mixin single-card {
+    width: calc((100% / 5) - 20px);
+    background-color: $main-bg-color;
+    margin: 0 10px;
+}

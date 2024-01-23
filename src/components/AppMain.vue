@@ -44,9 +44,11 @@
 
 <style lang="scss" scoped>
 
+@use '../assets/scss/partials/variables.scss' as *;
+
     main {
         padding: 20px 60px;
-        background-color: #D48F39;
+        background-color: $main-bg-color;
 
         div>select {
             width: 100px;
