@@ -9,9 +9,13 @@
             };
         },
         methods: {
-            newArch(x) {
-                this.store.singleArchetype = x;
-            }
+            // newArch(x) {
+            //     this.store.singleArchetype = x;
+            // },
+
+            // onSelect() {
+            //     console.log('this.store.singleArchetype: ', this.store.singleArchetype);
+            // }
         },
         components: {
             SingleCard,
@@ -27,8 +31,9 @@
         </div> -->
 
         <div>
-            <select @click="$emit('performSearch')" v-model="store.singleArchetype" class="mb-2">
-                <option @click="newArch(value)" v-for="(archetype, i) in store.cardsArchetype" :value="archetype" :key="i">{{ archetype }}</option>
+            <!-- All'evento @change richiamo l'Api principale che stampa le cards in pagina tramite $emit -->
+            <select @change="$emit('performSearch')" v-model="store.singleArchetype" class="mb-2">
+                <option v-for="(archetype, i) in store.cardsArchetype" :value="archetype" :key="i">{{ archetype }}</option>
             </select>
         </div>
         <div class="card-container">
